@@ -3,6 +3,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Todo.Domain.Models;
 using Todo.Repository;
 using Todo.RepositoryAbstraction;
+using ToDo.Services;
 
 namespace Todo.DeoendencyInjection
 {
@@ -10,12 +11,13 @@ namespace Todo.DeoendencyInjection
     {
         public static IServiceCollection AddTodoList(this IServiceCollection services)
         {
-            services.AddTransient<IRepository, TaskRepository>();
+            services.AddScoped<IToDoRepository, TaskToDoRepository>();
+            services.AddScoped<IToDoService, ToDoService>();
             // todo une connection par request => open à reception de request / fermeture une fois une reponse est donnée
            
-            services.AddDbContext<reddContext>(o =>
+            services.AddDbContext<TodoAppContext>(o =>
             {
-                o.UseNpgsql("User ID=postgres;Password=0000;Host=localhost;Port=5432;Database=redd;Pooling=true;Connection Lifetime=0;");
+                o.UseNpgsql();
             });
             return services;
         }

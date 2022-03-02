@@ -29,12 +29,12 @@ namespace ToDo
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddTransient<IRepository, TaskRepository>();
-            // todo une connection par request => open à reception de request / fermeture une fois une reponse est donnée
+            services.AddTransient<IToDoRepository, TaskToDoRepository>();
+            // todo une connection par request => open Ã  reception de request / fermeture une fois une reponse est donnÃ©e
 
-            services.AddDbContext<reddContext>(o =>
+            services.AddDbContext<TodoAppContext>(o =>
             {
-                o.UseNpgsql("User ID=postgres;Password=0000;Host=localhost;Port=5432;Database=redd;Pooling=true;Connection Lifetime=0;");
+                o.UseNpgsql(Configuration.GetConnectionString("TodoDb"));
             });
             services.AddControllers();
             services.AddSwaggerGen(c =>

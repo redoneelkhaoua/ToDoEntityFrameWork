@@ -5,13 +5,17 @@ VisualStudioVersion = 16.0.32106.194
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDo", "ToDo\ToDo.csproj", "{A03FACAA-BBEF-478E-B00A-99AC195D4998}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Todo.RepositoryAbstraction", "Todo.RepositoryAbstraction\Todo.RepositoryAbstraction.csproj", "{F596D001-8599-4978-BE54-33DD970E4058}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Todo.Repository.Abstractions", "Todo.Repository.Abstractions\Todo.Repository.Abstractions.csproj", "{F596D001-8599-4978-BE54-33DD970E4058}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Todo.Domain", "Todo.Domain\Todo.Domain.csproj", "{87C27692-473E-4475-9A96-6CBED19826C1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Todo.Repository", "Todo.Repository\Todo.Repository.csproj", "{BDD1774E-DE78-4984-BEC7-87AB8724369F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Todo.Persistence.EntityFramework", "Todo.Persistence.EntityFramework\Todo.Persistence.EntityFramework.csproj", "{BDD1774E-DE78-4984-BEC7-87AB8724369F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Todo.DeoendencyInjection", "Todo.DeoendencyInjection\Todo.DeoendencyInjection.csproj", "{1C21B004-081B-4629-8361-C8ACC63CE5F9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Todo.DependencyInjection", "Todo.DependencyInjection\Todo.DependencyInjection.csproj", "{1C21B004-081B-4629-8361-C8ACC63CE5F9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDo.Services", "ToDo.Services\ToDo.Services.csproj", "{E3CE5CFD-62B8-460B-93DA-E40CA46398A4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDo.Service.Abstractions", "ToDo.Service.Abstractions\ToDo.Service.Abstractions.csproj", "{B011FB1F-2A57-4CAC-8D0D-EA5DD2356F20}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +43,14 @@ Global
 		{1C21B004-081B-4629-8361-C8ACC63CE5F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1C21B004-081B-4629-8361-C8ACC63CE5F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1C21B004-081B-4629-8361-C8ACC63CE5F9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E3CE5CFD-62B8-460B-93DA-E40CA46398A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3CE5CFD-62B8-460B-93DA-E40CA46398A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3CE5CFD-62B8-460B-93DA-E40CA46398A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3CE5CFD-62B8-460B-93DA-E40CA46398A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B011FB1F-2A57-4CAC-8D0D-EA5DD2356F20}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B011FB1F-2A57-4CAC-8D0D-EA5DD2356F20}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B011FB1F-2A57-4CAC-8D0D-EA5DD2356F20}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B011FB1F-2A57-4CAC-8D0D-EA5DD2356F20}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -5,10 +5,11 @@ using System.Collections.Generic;
 
 namespace Todo.Domain.Models
 {
-    public partial class Task
+    
+    public partial class TodoTask
     {
         public decimal Id { get; set; }
-        public string Statue { get; set; }
+        public string Status { get; set; }
         public string Details { get; set; }
     }
 }

@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using Todo.Domain.Models;
 using Todo.RepositoryAbstraction;
 
@@ -12,39 +13,42 @@ namespace ToDo.Controllers
     [ApiController]
     public class TodoController : ControllerBase
     {
-        IRepository repository;
+        IToDoRepository _toDoRepository;
 
-        public TodoController(IRepository repository)
+        public TodoController(IToDoRepository toDoRepository)
         {
-            this.repository = repository;
+            _toDoRepository = toDoRepository;
         }
         [HttpGet]
-        public IActionResult GetAll()
+        public Task<IEnumerable<TodoTask>> GetAll()
         {
-            return Ok(repository.GetAll());
+            return _toDoRepository.GetAll();
         }
         [HttpGet ("{id}")]
-        public IActionResult GetById(int id)
+        public async Task<IActionResult> GetById(int id)
         {
-            return Ok(repository.GetById(id));
+            var result = await _toDoRepository.GetById(id);
+            if (result == null)
+            {
+                return NotFound();
+            }
+            return Ok(result);
         }
         [HttpPost]
-        public void Add(Task task )
+        public Task<int> Add(TodoTask todoTask )
         {
-            repository.Add(task);
-
+            return _toDoRepository.Add(todoTask);
         }
         [HttpPut ("{id}")]
-        public void Modify(int id ,Task task)
+        public async Task<int> Modify(int id ,TodoTask todoTask)
         {
-            repository.Modify(id,task);
-
-            
+            var result = await _toDoRepository.Modify(id,todoTask);
+            return result;
         }
         [HttpDelete("{id}")]
-         public void Delete(int id)
+         public Task<int> Delete(int id)
         {
-            repository.Delete(id);
+            return _toDoRepository.Delete(id);
         }
 
     }
