@@ -1,0 +1,14 @@
+{
+  "tasks": [
+    {
+      "id": 1,
+      "details": "Getting up from the bed",
+      "status": "done"
+    },
+    {
+      "id": 2,
+      "details": "Taking Breakfast",
+      "status": "not yet"
+    }
+  ]
+}
